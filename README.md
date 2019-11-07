@@ -6,18 +6,16 @@
 |password|string|null: false|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
-|chat_id|integer|null: false, foreign_key: true|
 
    # Association
 - has_many :chats,  through:  :chats_users
 - has_many :comments
 - has_many :chats_users
 
-## chats テーブル
+##  groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
    # Association
 - has_many :users,  through:  :chats_users
@@ -27,7 +25,7 @@
 ## comments テーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
 |chat_id|integer|null: false, foreign_key: true|
