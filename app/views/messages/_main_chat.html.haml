@@ -1,0 +1,10 @@
+.chat-main
+  .main-header
+    %h2.main-header__left-box
+      group name
+    %p.main-header__left-box-member__list
+      Member:
+    %a.main-header__edit-btn
+      Edit
+  = render "messages/chat_messages"
+  = render "messages/form"
