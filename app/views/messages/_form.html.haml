@@ -1,0 +1,8 @@
+.form
+  .new_messages
+    .text-input-box
+      %input.text-box(type="text" placeholder="type a message")
+      %label.input-box__image
+        = icon('fas', 'image')
+        %input.input-box{type: "file"}
+    %input.submit__btn(type="submit" value="Send")
