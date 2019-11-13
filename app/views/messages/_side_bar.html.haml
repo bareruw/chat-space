@@ -1,11 +1,11 @@
 .chat-side
   .side-header
     %p.name
-      name
+      = current_user.name
     %ul.botn
       = link_to "#", class: "side-header-botn" do
         =icon('fas', 'edit')
-      = link_to "#", class: "side-header-botn" do
+      = link_to edit_user_path(current_user), class: "side-header-botn" do
         =icon('fas', 'cog')
   .groups
     %p.chat
