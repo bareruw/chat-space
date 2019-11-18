@@ -1,10 +1,15 @@
 .chat-main
   .main-header
-    %h2.main-header__left-box
-      group name
+    %p.main-header__left-box
+      = @group.name
     %p.main-header__left-box-member__list
       Member:
-    %a.main-header__edit-btn
-      Edit
-  = render "messages/chat_messages"
+      - @group.group_users.each do |group_user|
+        = group_user.user.name
+    .main-header__edit-btn
+      = link_to edit_group_path(@group.id) do
+        EDIT
+  .messages
+    = render @messages
+
   = render "messages/form"
