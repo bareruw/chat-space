@@ -13,4 +13,5 @@
       = f.text_field :content, class: 'text-box', placeholder: 'type a message'
       = f.label :image, class: 'input-box__image' do
         = icon('fas', 'image')
+        = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'submit__btn'
