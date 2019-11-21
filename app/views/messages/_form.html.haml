@@ -1,16 +1,8 @@
--# .form
--#   .new_messages
--#     .text-input-box
--#       %input.text-box(type="text" placeholder="type a message")
--#       %label.input-box__image
--#         = icon('fas', 'image')
--#         %input.input-box{type: "file"}
--#     %input.submit__btn(type="submit" value="Send")
-
 .form
   = form_for [@group, @message] do |f|
     .text-input-box
       = f.text_field :content, class: 'text-box', placeholder: 'type a message'
       = f.label :image, class: 'input-box__image' do
         = icon('fas', 'image')
+        = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'submit__btn'
